@@ -6,14 +6,14 @@ import * as serviceWorker from "./serviceWorker";
 import store from "./redux/store";
 
 const render = () => {
-  fancyLog();  
+  // fancyLog();  
   return ReactDOM.render(<App />, document.getElementById("root"));
 };
 
-function fancyLog() {
-  console.log("%c Rendered with ", "background: purple; color: #FFF");
-  console.log(store.getState());
-}
+// function fancyLog() {
+//   console.log("%c Rendered with ", "background: purple; color: #FFF");
+//   console.log(store.getState());
+// }
 
 render();
 store.subscribe(render);
