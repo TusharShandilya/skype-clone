@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 import './ChatWindow';
 
 const ChatWindow = ({ activeUserId }) => {
-
+ 
   const state = store.getState();
   const activeUser = state.contacts[activeUserId];
 
