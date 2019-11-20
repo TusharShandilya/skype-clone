@@ -10,6 +10,7 @@ import "./App.css";
 
 const App = () => {
   const { contacts, user, activeUserId } = store.getState();
+  console.log(user);
 
   return (
     <div className="App">

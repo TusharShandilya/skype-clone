@@ -1,42 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import "./Chats.css";
+import './Chats.css';
 
-const Chat = ({ message }) => {
-  const { text, is_user_msg } = message;
+const Chats = ({ messages }) => {
   return (
-    <span className={`Chat ${is_user_msg ? "is-user-msg" : ""}`}>{text}</span>
+    <div>
+      <p>{messages}</p>
+    </div>
   );
-};
-
-class Chats extends React.Component {
-  constructor(props) {
-    super(props);
-    this.chatsRef = React.createRef();
-    console.log(this.chatsRef);
-  }
-
-  componentDidMount() {
-    this.scrollToBottom();
-  }
-
-  componentDidUpdate() {
-    this.scrollToBottom();
-  }
-
-  scrollToBottom = () => {
-    this.chatsRef.current.scrollTop = this.chatsRef.current.scrollHeight;
-  };
-
-  render() {
-    return (
-      <div className="Chats" ref={this.chatsRef}>
-        {this.props.messages.map(message => (
-          <Chat message={message} key={message.number} />
-        ))}
-      </div>
-    );
-  }
 }
 
 export default Chats;
